@@ -1,4 +1,4 @@
-.buttonMenu {
+.buttonMenu1 {
     -fx-font-size: 18px;
     -fx-text-fill: white;
     -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
@@ -14,4 +14,26 @@
 }
 
 .buttonClues {
-    -fx-background-image: url("Clues.png");}
+    -fx-background-image: url("Img/Clues.png");
+    -fx-background-size: cover;
+    -fx-background-color: transparent;
+}
+
+.gameInterface {
+    -fx-background-image: url("Img/gameImg.png");
+    -fx-background-size: cover;
+}
+
+.menuInterface {
+    -fx-background-image: url("Img/menuImg.jpg");
+    -fx-background-size: cover;
+}
+
+.txtField {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-border-color: #fff;
+    -fx-border-width: 1px;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px;
+}

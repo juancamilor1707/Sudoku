@@ -24,23 +24,52 @@ public class Board implements IBoard {
 
     private final Random random = new Random();
 
+
     public Board() {
         board = new ArrayList<>();
         for (int i = 0; i < SIZE; i++) {
-            List<Integer> row = new ArrayList<>();
+            board.add(new ArrayList<>());
             for (int j = 0; j < SIZE; j++) {
-                row.add(0);
+                board.get(i).add(0);
             }
-            board.add(row);
         }
 
-        // Generate the initial puzzle
-        if (!fillBlocks(0)) {
-            System.out.println("Failed to generate the Sudoku board.");
+        fill(0, 0);
+
+        // Guardar solución antes de remover
+        solution = new ArrayList<>();
+        for (List<Integer> row : board) {
+            solution.add(new ArrayList<>(row));
         }
 
-        // Generate and store the full solution
-        solution = generateFullSolution();
+        Random rand = new Random();
+        int removed = 0;
+        while (removed < 28) {
+            int row = rand.nextInt(6);
+            int col = rand.nextInt(6);
+            if (board.get(row).get(col) != 0) {
+                board.get(row).set(col, 0);
+                removed++;
+            }
+        }
+    }
+
+    private boolean fill(int row, int col) {
+        if (row == 6) return true;
+        if (col == 6) return fill(row + 1, 0);
+
+        List<Integer> nums = new ArrayList<>();
+        for (int i = 1; i <= 6; i++) nums.add(i);
+        Collections.shuffle(nums);
+
+        for (int n : nums) {
+            if (isValid(row, col, n)) {
+                board.get(row).set(col, n);
+                if (fill(row, col + 1)) return true;
+                board.get(row).set(col, 0);
+            }
+        }
+        return false;
     }
 
     @Override
@@ -58,7 +87,7 @@ public class Board implements IBoard {
         for (int i = 1; i <= SIZE; i++) {
             numbers.add(i);
         }
-        Collections.shuffle(numbers, random);
+        Collections.shuffle(numbers);
 
         for (int i = startRow; i < startRow + BLOCK_ROWS; i++) {
             for (int j = startCol; j < startCol + BLOCK_COLS; j++) {
@@ -71,6 +100,7 @@ public class Board implements IBoard {
                         board.get(i).set(j, 0);
                     }
                 }
+                return false;
             }
         }
         return false;
@@ -83,14 +113,25 @@ public class Board implements IBoard {
                 return false;
             }
         }
+
         for (int i = 0; i < SIZE; i++) {
             if (board.get(i).get(col) == candidate) {
                 return false;
             }
         }
+
+        int startRow = (row / BLOCK_ROWS) * BLOCK_ROWS;
+        int startCol = (col / BLOCK_COLS) * BLOCK_COLS;
+        for (int i = startRow; i < startRow + BLOCK_ROWS; i++) {
+            for (int j = startCol; j < startCol + BLOCK_COLS; j++) {
+                if (board.get(i).get(j) == candidate) {
+                    return false;
+                }
+            }
+        }
+
         return true;
     }
-
     public List<List<Integer>> getBoard() {
         return board;
     }

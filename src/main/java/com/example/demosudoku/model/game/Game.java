@@ -38,7 +38,7 @@
                     textField.setAlignment(Pos.CENTER);
                     textField.setText(String.valueOf(number));
                     textField.setBackground(Background.EMPTY);
-                    textField.setStyle("-fx-font-size: 20px; -fx-text-fill: white;");
+                    textField.setStyle("-fx-font-size: 25px; -fx-text-fill: black; -fx-width: 40; -fx-height: 40;");
                     if (number != 0) {
                         textField.setEditable(false);
                     } else{
@@ -61,25 +61,26 @@
          * @param row The row index of the cell in the board.
          * @param col The column index of the cell in the board.
          */
-        private void handleNumberField(TextField txt, int row, int col) {
+        // En Game.java, reemplaza handleNumberField():
 
+        private void handleNumberField(TextField txt, int row, int col) {
             txt.setOnKeyReleased(event -> {
                 String input = txt.getText().trim();
                 if(input.length() > 0){
                     try {
                         int num = Integer.parseInt(input);
                         if(num < 1 || num > 6) {
-                            System.out.println("no bro, sal de ahí");
                             txt.clear();
                             highlightError(txt);
                             return;
                         }
 
-                        boolean result = board.isValid(row, col, Integer.parseInt(input));
-                        System.out.println(result);
+                        boolean result = board.isValid(row, col, num);
+                        if (!result) {
+                            txt.clear();
+                        }
 
                     } catch (NumberFormatException e) {
-                        System.out.println("invalido");
                         highlightError(txt);
                         txt.clear();
                     }
@@ -102,7 +103,7 @@
 
 
         private void highlightError(TextField txt) {
-            txt.setStyle("-fx-border-color: red; -fx-border-width: 4px; -fx-font-size: 20px; -fx-text-fill: white;");
+            txt.setStyle("-fx-border-color: red; -fx-border-width: 3px; -fx-font-size: 20px;");
 
             PauseTransition pause = new PauseTransition(Duration.seconds(1)); // 1 second
             pause.setOnFinished(event -> resetStyle(txt));
@@ -110,7 +111,7 @@
         }
 
         private void resetStyle(TextField txt) {
-            txt.setStyle("-fx-border-color: transparent; -fx-font-size: 20px; -fx-text-fill: white;");
+            txt.setStyle("-fx-border-color: transparent; -fx-font-size: 20px; -fx-text-fill: black;");
         }
 
 
