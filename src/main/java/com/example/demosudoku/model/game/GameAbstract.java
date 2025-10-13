@@ -3,6 +3,7 @@ package com.example.demosudoku.model.game;
 import com.example.demosudoku.model.board.Board;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.control.Button;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ public class GameAbstract implements IGame {
     protected Board board;
     /** A list of TextFields representing the cells on the board. */
     protected ArrayList<TextField> numberFields;
+    protected Button buttonGame;
 
     /**
      * Constructs a GameAbstract instance, initializing the board and UI components.
@@ -27,6 +29,7 @@ public class GameAbstract implements IGame {
         this.boardGridpane = boardGridpane;
         this.board = new Board();
         this.numberFields = new ArrayList<TextField>();
+        this.buttonGame = new Button();
     }
 
     /**

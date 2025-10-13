@@ -1,0 +1,17 @@
+.buttonMenu {
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+    -fx-background-color: transparent;
+}
+
+.buttonMenu:hover {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, black, 10, 0.8, 0, 0);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.buttonClues {
+    -fx-background-image: url("Clues.png");}
