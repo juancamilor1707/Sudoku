@@ -1,0 +1,51 @@
+.buttonMenu:hover {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, black, 10, 0.8, 0, 0);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.buttonClues {
+    -fx-background-image: url("Img/Clues.png");
+    -fx-background-size: cover;
+    -fx-background-color: transparent;
+}
+
+buttonClues:hover {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, black, 10, 0.8, 0, 0);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.gameInterface {
+    -fx-background-image: url("Img/gameImg.png");
+    -fx-background-size: cover;
+}
+
+.menuInterface {
+    -fx-background-image: url("Img/menuImg.jpg");
+    -fx-background-size: cover;
+}
+
+.helpInterface {
+    -fx-background-image: url(Img/helpImg.png);
+    -fx-background-size: cover;
+}
+
+.victoryInterface {
+    -fx-background-image: url("Img/VictoryImage.jpg");
+    -fx-background-size: cover;
+}
+
+.txtField {
+    -fx-background-image: url("Img/textFieldMenu.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+}
