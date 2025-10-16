@@ -16,6 +16,7 @@ import java.util.Random;
  * <p>
  * Java JDK 17.
  */
+//
 public class Board implements IBoard {
     // Board dimensions and block dimensions.
     private final int SIZE = 6;

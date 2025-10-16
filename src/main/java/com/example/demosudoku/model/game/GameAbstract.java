@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * An abstract base class for game logic, providing common properties
  * for a Sudoku game.
  */
+//
 public class GameAbstract implements IGame {
     /** The UI grid where the board is displayed. */
     protected GridPane boardGridpane;

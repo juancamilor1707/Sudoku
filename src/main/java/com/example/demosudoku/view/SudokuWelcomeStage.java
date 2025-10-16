@@ -35,7 +35,7 @@ public class SudokuWelcomeStage extends Stage {
         );
         show();
     }
-
+//
     /**
      * Inner static class to hold the singleton instance (lazy initialization).
      */

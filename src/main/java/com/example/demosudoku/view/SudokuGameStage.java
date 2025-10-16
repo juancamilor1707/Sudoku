@@ -8,7 +8,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+//
 /**
  * A singleton Stage for the main Sudoku game window.
  * This class ensures that only one instance of the game window can exist.
