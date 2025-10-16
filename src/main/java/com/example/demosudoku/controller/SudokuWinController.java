@@ -57,6 +57,8 @@ public class SudokuWinController {
             stage.setScene(scene);
             stage.show();
 
+            //cambio
+
         } catch (IOException ex) {
             // Handle error if the FXML file is not found or cannot be loaded
             System.err.println("Error loading sudoku-welcome-view.fxml: " + ex.getMessage());

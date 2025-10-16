@@ -64,6 +64,8 @@ public class SudokuWinStage extends Stage {
         return Holder.INSTANCE;
     }
 
+    //cambio
+
     /**
      * Closes the stage, effectively deleting the instance from view.
      */

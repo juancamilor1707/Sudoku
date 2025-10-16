@@ -41,6 +41,8 @@ public class SudokuWelcomeController {
             SudokuWelcomeStage.deleteInstance();
         } else {
             new AlertBox().showAlert("Error", "Ingresa un nickname", Alert.AlertType.ERROR);
+
+            //
         }
     }
 }
