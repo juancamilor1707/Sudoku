@@ -3,7 +3,6 @@ package com.example.demosudoku.utils;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-//
 /**
  * A utility class for creating and displaying standard JavaFX alerts.
  */

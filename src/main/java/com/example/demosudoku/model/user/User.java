@@ -1,6 +1,5 @@
 package com.example.demosudoku.model.user;
 
-//
 public class User {
     private String nickname;
 

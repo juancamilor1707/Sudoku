@@ -8,21 +8,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * A singleton Stage for the welcome window.
- * This class ensures that only one instance of the welcome window can exist.
- */
-public class SudokuWelcomeStage extends Stage {
-
+public class SudokuHelpStage extends Stage {
     /**
      * Private constructor to enforce the singleton pattern. It loads the FXML view,
      * sets up the scene, and configures the stage properties.
      *
      * @throws IOException if the FXML file cannot be loaded.
      */
-    private SudokuWelcomeStage() throws IOException {
+    private SudokuHelpStage() throws IOException {
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/com/example/demosudoku/sudoku-welcome-view.fxml")
+                getClass().getResource("/com/example/demosudoku/sudoku-help-view.fxml")
         );
         Parent root = loader.load();
 
@@ -40,19 +35,19 @@ public class SudokuWelcomeStage extends Stage {
      * Inner static class to hold the singleton instance (lazy initialization).
      */
     private static class Holder {
-        private static SudokuWelcomeStage INSTANCE = null;
+        private static SudokuHelpStage INSTANCE = null;
     }
 
     /**
-     * Provides global access to the singleton SudokuWelcomeStage instance.
+     * Provides global access to the singleton SudokuHelpStage instance.
      * Creates the instance if it doesn't exist yet.
      *
-     * @return The single instance of SudokuWelcomeStage.
+     * @return The single instance of SudokuHelpStage.
      * @throws IOException if the FXML file cannot be loaded during the first creation.
      */
-    public static SudokuWelcomeStage getInstance() throws IOException {
+    public static SudokuHelpStage getInstance() throws IOException {
         Holder.INSTANCE = Holder.INSTANCE != null ?
-                Holder.INSTANCE : new SudokuWelcomeStage();
+                Holder.INSTANCE : new SudokuHelpStage();
         return Holder.INSTANCE;
     }
 
@@ -63,4 +58,5 @@ public class SudokuWelcomeStage extends Stage {
         Holder.INSTANCE.close();
         Holder.INSTANCE = null;
     }
+
 }

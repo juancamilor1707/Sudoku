@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" styleClass="victoryInterface" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demosudoku.controller.SudokuWinController">
+   <children>
+      <ImageView fitHeight="73.0" fitWidth="168.0" layoutX="14.0" layoutY="14.0" onMousePressed="#handleMenuWin" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Img/ButtomBack.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
