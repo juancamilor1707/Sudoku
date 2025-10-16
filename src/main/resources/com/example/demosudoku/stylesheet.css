@@ -1,0 +1,55 @@
+.buttonMenu1 {
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+    -fx-background-color: transparent;
+}
+
+.buttonMenu:hover {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, black, 10, 0.8, 0, 0);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.buttonClues {
+    -fx-background-image: url("Img/Clues.png");
+    -fx-background-size: cover;
+    -fx-background-color: transparent;
+}
+
+.gameInterface {
+    -fx-background-image: url("Img/gameImg.png");
+    -fx-background-size: cover;
+}
+
+.menuInterface {
+    -fx-background-image: url("Img/menuImg.jpg");
+    -fx-background-size: cover;
+}
+
+.victoryInterface {
+    -fx-background-image: url("Img/VictoryImage.jpg");
+    -fx-background-size: cover;
+}
+
+.txtField {
+    -fx-background-image: url("Img/textFieldMenu.png");
+
+    /* 1. Fuerza a la imagen a cubrir el 100% del ancho y 100% del alto del TextField. */
+    -fx-background-size: 100% 100%;
+
+    /* 2. Elimina el color de fondo por defecto del TextField (que suele ser blanco). */
+    -fx-background-color: transparent;
+
+    /* 3. Asegura que no haya esquinas redondeadas que entren en conflicto con el pixel art. */
+    -fx-background-radius: 0px;
+
+    /* 4. Evita que la imagen pequeña se repita (se "tilee"). */
+    -fx-background-repeat: no-repeat;
+
+    /* 5. Estilo de texto. */
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+}
