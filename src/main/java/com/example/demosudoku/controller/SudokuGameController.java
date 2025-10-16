@@ -43,11 +43,7 @@ public class SudokuGameController implements Initializable {
         game.startGame();
 
         if (hintButton != null) {
-            hintButton.setOnAction(event -> {
-                game.provideHint();
-                boardGridPane.getChildren().clear();
-                game.startGame();
-            });
+            hintButton.setOnAction(event -> game.provideHint());
         }
     }
 

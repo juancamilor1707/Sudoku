@@ -36,7 +36,6 @@ public class Board implements IBoard {
 
         fill(0, 0);
 
-        // Guardar solución antes de remover
         solution = new ArrayList<>();
         for (List<Integer> row : board) {
             solution.add(new ArrayList<>(row));
@@ -44,12 +43,26 @@ public class Board implements IBoard {
 
         Random rand = new Random();
         int removed = 0;
-        while (removed < 28) {
+
+        while (removed < 24) {
             int row = rand.nextInt(6);
             int col = rand.nextInt(6);
+
             if (board.get(row).get(col) != 0) {
-                board.get(row).set(col, 0);
-                removed++;
+                int blockRow = row / BLOCK_ROWS;
+                int blockCol = col / BLOCK_COLS;
+                int count = 0;
+
+                for (int i = blockRow * BLOCK_ROWS; i < (blockRow + 1) * BLOCK_ROWS; i++) {
+                    for (int j = blockCol * BLOCK_COLS; j < (blockCol + 1) * BLOCK_COLS; j++) {
+                        if (board.get(i).get(j) != 0) count++;
+                    }
+                }
+
+                if (count > 2) {
+                    board.get(row).set(col, 0);
+                    removed++;
+                }
             }
         }
     }

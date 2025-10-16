@@ -3,11 +3,13 @@ package com.example.demosudoku.controller;
 import com.example.demosudoku.model.user.User;
 import com.example.demosudoku.utils.AlertBox;
 import com.example.demosudoku.view.SudokuGameStage;
+import com.example.demosudoku.view.SudokuHelpStage;
 import com.example.demosudoku.view.SudokuWelcomeStage;
-import javafx.event.ActionEvent;
+import com.example.demosudoku.view.SudokuWelcomeStage;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
@@ -32,7 +34,7 @@ public class SudokuWelcomeController {
      * @throws IOException If the SudokuGameStage FXML file cannot be loaded.
      */
     @FXML
-    void handlePlay(ActionEvent event) throws IOException {
+    void handlePlay(MouseEvent event) throws IOException {
         String nickname = nicknameTxt.getText().trim();
 
         if (!nickname.equals("")) {
@@ -42,4 +44,12 @@ public class SudokuWelcomeController {
             new AlertBox().showAlert("Error", "Ingresa un nickname", Alert.AlertType.ERROR);
         }
     }
+
+    @FXML
+    void handleHelp(MouseEvent event) throws IOException {
+        SudokuHelpStage.getInstance();
+        SudokuWelcomeStage.deleteInstance();
+    }
+
+
 }
